@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="filerepair">
+<head>
+    <meta charset="UTF-8">
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    <!-- SPELLS -->
+    <!-- load angular and angular route via CDN -->
+</head>
+<body>
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div ng-controller="mainController">
+    <h1>Filerepair Web-App</h1>
+    <div class="container">
+        <h3>{{ message }}</h3>
+        <form>
+            <div class="form-group">
+                <label for="file">File input:</label>
+                <input type="file" id="file" ng-modal="csvfile">
+                <p class="help-block">laden sie eine Buchliste hoch</p>
+            </div>
+            <button ng-click="showfile()" class="btn btn-success" type="button">Hochladen</button>
+        </form>
+        <div id="tableView">
+            {{ csvfile }}
+            {{ csvlines }}
+        </div>
+    </div>
+</div>
+<script src="../angular/angular.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
